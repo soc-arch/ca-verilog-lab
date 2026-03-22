@@ -95,7 +95,7 @@
 
 **파일:** `prob5_param_adder/param_adder.v`
 
-`parameter`를 사용하여 bit-width를 설정할 수 있는 adder를 설계하세요. 기본값은 8-bit입니다.
+`parameter`를 사용하여 bit-width를 설정할 수 있는 unsigned adder를 설계하세요. 기본값은 8-bit입니다. 모든 입출력은 unsigned로 동작합니다.
 
 | Port | Direction | Width | Description |
 |------|-----------|-------|-------------|
