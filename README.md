@@ -10,6 +10,7 @@
 | [Lab 2](lab2/) | Combinational Logic with `always @(*)` | always block, if/else, case, blocking assignment |
 | [Lab 3](lab3/) | Sequential Logic | posedge clk, nonblocking assignment, async reset |
 | [Lab 4](lab4/) | Hierarchy & Integration | module instantiation, datapath 설계, coding style |
+| [Lab 5](lab5/) | SystemVerilog Conversion | logic, always_comb, always_ff, dot-name port connection |
 
 ## 환경 설정
 
