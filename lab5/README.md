@@ -98,10 +98,12 @@ register8 u_reg0 (
 );
 ```
 
-**실무 가이드:**
-- **`.name` (dot-name)**: naming convention(`_i`/`_o` 등)이 잘 지켜져 포트=신호 이름이 일치하면 가독성과 편의성 모두 우수. 실무에서 가장 권장.
-- **`.*` (dot-star)**: 빠른 프로토타이핑에 유용하나, "보이지 않는 연결"이 생겨 코드 리뷰와 유지보수에 불리. 사용 시 주의.
-- **named port**: 포트/신호 이름이 다를 때 필수. 항상 안전한 기본 선택.
+**권장 사항:**
+- **named port `.port(signal)`을 기본으로 사용하세요.** 가장 명시적이고 안전합니다. 어떤 포트에 어떤 신호가 연결되는지 코드만 보고 바로 파악할 수 있습니다.
+- **`.name` (dot-name)**: 포트와 신호 이름이 일치할 때 사용할 수 있습니다. naming convention이 잘 갖춰진 대규모 프로젝트(lowRISC/OpenTitan 등)에서 활용됩니다.
+- **`.*` (dot-star)**: 빠른 프로토타이핑에 유용하나, "보이지 않는 연결"이 생겨 코드 리뷰와 유지보수에 불리합니다. 일부 팀/회사에서는 사용을 금지합니다.
+
+이 Lab에서는 named port를 기본으로 하되, prob2와 prob3에서 dot-name도 선택적으로 시도해 볼 수 있습니다.
 
 ## 문제 목록
 
@@ -130,8 +132,7 @@ Lab 4 Problem 2와 동일한 기능을 SystemVerilog로 구현하세요.
 - 모든 sub-module에서 `logic` 사용
 - `decoder2to4`: `always_comb`
 - `register8`: `always_ff`
-- `top_mux_dec_reg`: `.name` (dot-name) 포트 연결 활용
-  - `clk`, `rst_n` 등 이름이 일치하는 포트에 적용
+- `top_mux_dec_reg`: named port 기본. 선택적으로 `.name` (dot-name) 시도 가능.
 
 ---
 
@@ -144,9 +145,7 @@ Lab 4 Problem 3과 동일한 기능을 SystemVerilog로 구현하세요.
 **변환 포인트:**
 - `alu_unit`: `always_comb`
 - `reg_file`: `always_ff` (write) + `always_comb` (read)
-- `datapath`: `.name` 포트 연결 적극 활용
-  - `clk`, `rst_n`, `we`, `zero` 등 이름 일치하는 신호에 dot-name 사용
-  - 이름이 다른 연결은 named port 유지
+- `datapath`: named port 기본. 선택적으로 `.name` 시도 가능 (`clk`, `rst_n` 등 이름 일치하는 포트)
 
 ---
 
