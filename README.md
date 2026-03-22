@@ -26,15 +26,18 @@
 #### 설치
 
 ```bash
+# Verilator 설치
 # Ubuntu/WSL
 sudo apt install verilator
 # macOS
 brew install verilator
-
-# Surfer (waveform viewer)
-# https://surfer-project.org/ 에서 다운로드 또는:
-cargo install --locked surfer   # Rust 필요
 ```
+
+Surfer (waveform viewer)는 **VSCode Extension**으로 설치하는 것이 가장 간편합니다:
+
+1. VSCode에서 Extensions (Ctrl+Shift+X)를 엽니다.
+2. **"Surfer"**를 검색하여 설치합니다.
+3. 시뮬레이션 실행 후 생성된 `.fst` 파일을 VSCode에서 클릭하면 waveform이 바로 표시됩니다.
 
 #### 사용법
 
@@ -43,9 +46,10 @@ cargo install --locked surfer   # Rust 필요
 ```bash
 make lint           # 코드 lint 검사 (Verilator)
 make sim PROB=prob1_halfadder   # 시뮬레이션 실행
-make wave PROB=prob1_halfadder  # Surfer로 waveform 열기
 make all            # 전체 문제 시뮬레이션
 ```
+
+시뮬레이션 후 각 문제 폴더에 `dump.fst` 파일이 생성됩니다. VSCode에서 이 파일을 클릭하면 Surfer가 waveform을 표시합니다.
 
 ## 진행 방법
 
