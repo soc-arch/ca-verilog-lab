@@ -1,7 +1,13 @@
-PROBLEMS = prob1_halfadder prob2_fulladder prob3_alu8bit prob4_detector prob5_param_adder
+PROBLEMS = prob1 prob2 prob3 prob4 prob5
 
-# Extract module name from directory name (strip probN_ prefix)
-mod = $(shell echo $(PROB) | sed 's/^prob[0-9]*_//')
+# Per-problem module name mapping
+prob1_MOD = dff
+prob2_MOD = counter
+prob3_MOD = shift_reg
+prob4_MOD = updown_counter
+prob5_MOD = pwm
+
+mod = $($(PROB)_MOD)
 
 .PHONY: all sim wave lint clean
 
@@ -13,7 +19,7 @@ all:
 	done
 
 sim:
-	@if [ -z "$(PROB)" ]; then echo "Usage: make sim PROB=prob1_halfadder"; exit 1; fi
+	@if [ -z "$(PROB)" ]; then echo "Usage: make sim PROB=prob1"; exit 1; fi
 	cd $(PROB) && verilator --binary --trace-fst -Wall \
 		-Wno-DECLFILENAME -Wno-WIDTHEXPAND \
 		--top-module $(mod)_tb \
@@ -22,11 +28,11 @@ sim:
 	./obj_dir/sim_$(mod)
 
 wave:
-	@if [ -z "$(PROB)" ]; then echo "Usage: make wave PROB=prob1_halfadder"; exit 1; fi
+	@if [ -z "$(PROB)" ]; then echo "Usage: make wave PROB=prob1"; exit 1; fi
 	cd $(PROB) && surfer dump.fst &
 
 lint:
-	@if [ -z "$(PROB)" ]; then echo "Usage: make lint PROB=prob1_halfadder"; exit 1; fi
+	@if [ -z "$(PROB)" ]; then echo "Usage: make lint PROB=prob1"; exit 1; fi
 	cd $(PROB) && verilator --lint-only -Wall $(mod).v
 
 clean:

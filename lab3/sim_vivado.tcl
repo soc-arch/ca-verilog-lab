@@ -1,5 +1,5 @@
 # Vivado Batch Simulation Script for Lab 3
-# Usage: vivado -mode batch -source sim_vivado.tcl -tclargs prob1_dff
+# Usage: vivado -mode batch -source sim_vivado.tcl -tclargs prob1
 
 set prob [lindex $argv 0]
 if {$prob eq ""} {
@@ -7,7 +7,16 @@ if {$prob eq ""} {
     exit 1
 }
 
-regexp {^prob\d+_(.*)} $prob -> mod
+# Per-problem module name mapping
+array set mod_map {
+    prob1 dff
+    prob2 counter
+    prob3 shift_reg
+    prob4 updown_counter
+    prob5 pwm
+}
+
+set mod $mod_map($prob)
 
 set proj_name "sim_${mod}"
 set proj_dir "./${prob}/vivado_proj"

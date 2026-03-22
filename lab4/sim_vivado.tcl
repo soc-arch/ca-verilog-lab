@@ -1,6 +1,6 @@
 # Vivado Batch Simulation Script for Lab 4
 # Usage: vivado -mode batch -source sim_vivado.tcl -tclargs <problem_dir>
-# Example: vivado -mode batch -source sim_vivado.tcl -tclargs prob1_alu_acc
+# Example: vivado -mode batch -source sim_vivado.tcl -tclargs prob1
 
 set prob [lindex $argv 0]
 if {$prob eq ""} {
@@ -10,10 +10,10 @@ if {$prob eq ""} {
 
 # Per-problem configuration
 array set top_modules {
-    prob1_alu_acc         alu_acc_tb
-    prob2_mux_dec_reg     top_mux_dec_reg_tb
-    prob3_simple_datapath datapath_tb
-    prob4_code_review     good_counter_tb
+    prob1 alu_acc_tb
+    prob2 top_mux_dec_reg_tb
+    prob3 datapath_tb
+    prob4 good_counter_tb
 }
 
 set top $top_modules($prob)

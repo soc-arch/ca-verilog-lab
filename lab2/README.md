@@ -16,7 +16,7 @@
 
 ### Problem 1: 4:1 Multiplexer ★☆☆
 
-**파일:** `prob1_mux4to1/mux4to1.v`
+**파일:** `prob1/mux4to1.v`
 
 `case` 문을 사용하여 4:1 MUX를 설계하세요.
 
@@ -42,7 +42,7 @@
 
 ### Problem 2: Priority Encoder ★★☆
 
-**파일:** `prob2_priority_enc/priority_enc.v`
+**파일:** `prob2/priority_enc.v`
 
 4-bit request 입력에서 가장 높은 우선순위의 활성 요청을 인코딩하세요.
 
@@ -65,7 +65,7 @@
 
 ### Problem 3: 7-Segment Decoder ★★☆
 
-**파일:** `prob3_seven_seg/seven_seg.v`
+**파일:** `prob3/seven_seg.v`
 
 4-bit BCD 입력(0~9)을 7-segment display 패턴으로 변환하세요.
 
@@ -103,7 +103,7 @@
 
 ### Problem 4: Simple ALU ★★★
 
-**파일:** `prob4_alu/alu.v`
+**파일:** `prob4/alu.v`
 
 3-bit `op` 신호에 따라 8-bit 산술/논리 연산을 수행하는 ALU를 설계하세요.
 
@@ -132,7 +132,7 @@
 
 ### Problem 5: Barrel Shifter ★★★
 
-**파일:** `prob5_barrel_shifter/barrel_shifter.v`
+**파일:** `prob5/barrel_shifter.v`
 
 8-bit 입력을 `shamt`(shift amount)만큼 왼쪽으로 rotate하는 barrel shifter를 설계하세요.
 
@@ -161,8 +161,8 @@
 
 ### Verilator + Surfer
 ```bash
-make sim PROB=prob1_mux4to1     # 개별 실행
+make sim PROB=prob1              # 개별 실행
 make all                         # 전체 실행
-make wave PROB=prob1_mux4to1    # waveform 확인
-make lint PROB=prob1_mux4to1    # lint 검사
+make wave PROB=prob1             # waveform 확인
+make lint PROB=prob1             # lint 검사
 ```

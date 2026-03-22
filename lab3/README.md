@@ -17,7 +17,7 @@
 
 ### Problem 1: D Flip-Flop with Async Reset ★☆☆
 
-**파일:** `prob1_dff/dff.v`
+**파일:** `prob1/dff.v`
 
 Active-low asynchronous reset을 갖는 D flip-flop을 설계하세요.
 
@@ -38,7 +38,7 @@ Active-low asynchronous reset을 갖는 D flip-flop을 설계하세요.
 
 ### Problem 2: 4-bit Counter with Enable ★★☆
 
-**파일:** `prob2_counter/counter.v`
+**파일:** `prob2/counter.v`
 
 Enable 기능이 있는 4-bit up counter를 설계하세요.
 
@@ -58,7 +58,7 @@ Enable 기능이 있는 4-bit up counter를 설계하세요.
 
 ### Problem 3: Shift Register (SIPO) ★★☆
 
-**파일:** `prob3_shift_reg/shift_reg.v`
+**파일:** `prob3/shift_reg.v`
 
 Serial-In, Parallel-Out (SIPO) shift register를 설계하세요.
 
@@ -78,7 +78,7 @@ Serial-In, Parallel-Out (SIPO) shift register를 설계하세요.
 
 ### Problem 4: Up/Down Counter with Load ★★★
 
-**파일:** `prob4_updown_counter/updown_counter.v`
+**파일:** `prob4/updown_counter.v`
 
 방향 제어와 병렬 load 기능을 갖는 8-bit counter를 설계하세요.
 
@@ -103,7 +103,7 @@ Serial-In, Parallel-Out (SIPO) shift register를 설계하세요.
 
 ### Problem 5: PWM Generator ★★★
 
-**파일:** `prob5_pwm/pwm.v`
+**파일:** `prob5/pwm.v`
 
 8-bit duty cycle 값에 따라 PWM 신호를 생성하는 모듈을 설계하세요.
 
@@ -134,8 +134,8 @@ Serial-In, Parallel-Out (SIPO) shift register를 설계하세요.
 
 ### Verilator + Surfer
 ```bash
-make sim PROB=prob1_dff         # 개별 실행
+make sim PROB=prob1              # 개별 실행
 make all                         # 전체 실행
-make wave PROB=prob1_dff        # waveform 확인
-make lint PROB=prob1_dff        # lint 검사
+make wave PROB=prob1             # waveform 확인
+make lint PROB=prob1             # lint 검사
 ```

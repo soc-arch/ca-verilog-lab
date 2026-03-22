@@ -17,7 +17,7 @@
 
 ### Problem 1: Half Adder ★☆☆
 
-**파일:** `prob1_halfadder/halfadder.v`
+**파일:** `prob1/halfadder.v`
 
 1-bit half adder를 설계하세요.
 
@@ -34,7 +34,7 @@
 
 ### Problem 2: Full Adder ★☆☆
 
-**파일:** `prob2_fulladder/fulladder.v`
+**파일:** `prob2/fulladder.v`
 
 1-bit full adder를 설계하세요. 중간 wire를 선언하여 사용해도 됩니다.
 
@@ -52,7 +52,7 @@
 
 ### Problem 3: 8-bit Bitwise ALU ★★☆
 
-**파일:** `prob3_alu8bit/alu8bit.v`
+**파일:** `prob3/alu8bit.v`
 
 2-bit `op` 신호에 따라 8-bit 입력 `a`, `b`에 대해 서로 다른 bitwise 연산을 수행하는 ALU를 설계하세요.
 
@@ -76,7 +76,7 @@
 
 ### Problem 4: Zero and Sign Detector ★★☆
 
-**파일:** `prob4_detector/detector.v`
+**파일:** `prob4/detector.v`
 
 8-bit 입력을 2's complement로 해석하여 zero, negative, positive 플래그를 생성하세요. (Verilog 코드에서 `signed` 키워드를 사용할 필요는 없습니다 — 비트 패턴만으로 판별할 수 있습니다.)
 
@@ -93,7 +93,7 @@
 
 ### Problem 5: Parameterized Adder ★★★
 
-**파일:** `prob5_param_adder/param_adder.v`
+**파일:** `prob5/param_adder.v`
 
 `parameter`를 사용하여 bit-width를 설정할 수 있는 unsigned adder를 설계하세요. 기본값은 8-bit입니다. 모든 입출력은 unsigned로 동작합니다.
 
@@ -120,8 +120,8 @@ Parameter: `WIDTH` (default = 8)
 
 ### Verilator + Surfer
 ```bash
-make sim PROB=prob1_halfadder    # 개별 실행
+make sim PROB=prob1              # 개별 실행
 make all                         # 전체 실행
-make wave PROB=prob1_halfadder   # waveform 확인
-make lint PROB=prob1_halfadder   # lint 검사
+make wave PROB=prob1             # waveform 확인
+make lint PROB=prob1             # lint 검사
 ```

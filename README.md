@@ -6,10 +6,10 @@
 
 | Lab | 주제 | 핵심 개념 |
 |-----|------|----------|
-| [Lab 1](lab1_comb_assign/) | Combinational Logic with `assign` | wire, assign, bitwise/arithmetic operators |
-| [Lab 2](lab2_comb_always/) | Combinational Logic with `always @(*)` | always block, if/else, case, blocking assignment |
-| [Lab 3](lab3_sequential/) | Sequential Logic | posedge clk, nonblocking assignment, async reset |
-| [Lab 4](lab4_hierarchy/) | Hierarchy & Integration | module instantiation, datapath 설계, coding style |
+| [Lab 1](lab1/) | Combinational Logic with `assign` | wire, assign, bitwise/arithmetic operators |
+| [Lab 2](lab2/) | Combinational Logic with `always @(*)` | always block, if/else, case, blocking assignment |
+| [Lab 3](lab3/) | Sequential Logic | posedge clk, nonblocking assignment, async reset |
+| [Lab 4](lab4/) | Hierarchy & Integration | module instantiation, datapath 설계, coding style |
 
 ## 환경 설정
 
@@ -44,9 +44,9 @@ Surfer (waveform viewer)는 **VSCode Extension**으로 설치하는 것이 가�
 각 Lab 디렉토리에서:
 
 ```bash
-make lint           # 코드 lint 검사 (Verilator)
-make sim PROB=prob1_halfadder   # 시뮬레이션 실행
-make all            # 전체 문제 시뮬레이션
+make lint PROB=prob1   # 코드 lint 검사 (Verilator)
+make sim PROB=prob1    # 시뮬레이션 실행
+make all               # 전체 문제 시뮬레이션
 ```
 
 시뮬레이션 후 각 문제 폴더에 `dump.fst` 파일이 생성됩니다. VSCode에서 이 파일을 클릭하면 Surfer가 waveform을 표시합니다.
@@ -58,7 +58,7 @@ make all            # 전체 문제 시뮬레이션
    git clone https://github.com/soc-arch/ca-verilog-lab.git
    ```
 2. 각 Lab의 `README.md`를 읽고 문제를 확인합니다.
-3. `probN_xxx/` 폴더의 skeleton `.v` 파일에서 `// TODO` 부분을 작성합니다.
+3. `probN/` 폴더의 skeleton `.v` 파일에서 `// TODO` 부분을 작성합니다.
 4. Testbench(`_tb.v`)는 수정하지 않습니다.
 5. 시뮬레이션을 실행하여 **All tests passed!** 메시지를 확인합니다.
 

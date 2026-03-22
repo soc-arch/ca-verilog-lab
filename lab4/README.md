@@ -18,7 +18,7 @@
 
 ### Problem 1: ALU + Accumulator ★★☆
 
-**파일:** `prob1_alu_acc/alu_acc.v`
+**파일:** `prob1/alu_acc.v`
 
 Lab 2에서 설계한 것과 같은 ALU(조합 논리)와 accumulator register(순차 논리)를 결합합니다. ALU와 register를 **같은 파일 내에서 별도의 always/assign 블록으로 분리**하여 설계하세요.
 
@@ -70,7 +70,7 @@ Lab 2에서 설계한 것과 같은 ALU(조합 논리)와 accumulator register(�
 
 ### Problem 2: MUX + Decoder + Register 조합 ★★★
 
-**파일:** `prob2_mux_dec_reg/` 디렉토리 내 파일들
+**파일:** `prob2/` 디렉토리 내 파일들
 
 3개의 서로 다른 모듈을 설계하고, top 모듈에서 이들을 인스턴스화하여 연결합니다.
 
@@ -130,7 +130,7 @@ raddr ------------------------------------------------> [mux] ---> rdata
 
 ### Problem 3: Simple Datapath ★★★
 
-**파일:** `prob3_simple_datapath/` 디렉토리 내 파일들
+**파일:** `prob3/` 디렉토리 내 파일들
 
 ALU, MUX, Register를 연결한 미니 datapath를 설계하세요. 컴퓨터구조에서 배우는 datapath의 축소 버전입니다.
 
@@ -200,7 +200,7 @@ raddr2 ---> [reg_file] ---> rdata2 --+
 
 ### Problem 4: Coding Style Review ★★☆
 
-**파일:** `prob4_code_review/bad_counter.v`
+**파일:** `prob4/bad_counter.v`
 
 아래 "나쁜 코드"가 제공됩니다. 강의 Part 3 (Coding Style)과 Part 2 (Mapping Rules)에서 배운 내용을 적용하여 `good_counter.v`로 리팩토링하세요.
 
@@ -225,9 +225,9 @@ raddr2 ---> [reg_file] ---> rdata2 --+
 
 ### Verilator + Surfer
 ```bash
-make sim PROB=prob1_alu_acc          # 개별 실행
+make sim PROB=prob1                   # 개별 실행
 make all                              # 전체 실행
-make wave PROB=prob1_alu_acc         # waveform 확인
+make wave PROB=prob1                  # waveform 확인
 ```
 
 **Note:** Lab 4의 일부 문제는 여러 `.v` 파일이 필요합니다. Makefile이 자동으로 처리합니다.
