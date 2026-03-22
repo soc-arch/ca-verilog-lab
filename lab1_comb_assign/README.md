@@ -78,11 +78,11 @@
 
 **파일:** `prob4_detector/detector.v`
 
-8-bit signed 입력에 대해 zero, negative, positive 플래그를 생성하세요.
+8-bit 입력을 2's complement로 해석하여 zero, negative, positive 플래그를 생성하세요. (Verilog 코드에서 `signed` 키워드를 사용할 필요는 없습니다 — 비트 패턴만으로 판별할 수 있습니다.)
 
 | Port | Direction | Width | Description |
 |------|-----------|-------|-------------|
-| `data` | input | 8 | 8-bit signed data |
+| `data` | input | 8 | 8-bit data (2's complement representation) |
 | `is_zero` | output | 1 | 1 if data == 0 |
 | `is_neg` | output | 1 | 1 if data is negative (MSB == 1) |
 | `is_pos` | output | 1 | 1 if data > 0 (not zero, not negative) |
