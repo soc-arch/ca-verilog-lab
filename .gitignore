@@ -1,0 +1,28 @@
+# Vivado
+*.jou
+*.log
+*.str
+*.xpr
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+*.ip_user_files/
+.Xil/
+vivado_pid*.str
+
+# Verilator
+obj_dir/
+*.fst
+*.vcd
+*.verilator_timestamp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
